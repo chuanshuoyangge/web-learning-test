@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>hello vue.js</title>
+    </head>
+    <body>
+        <!--view-->
+        <div id="app">
+            <p>{{message}}</p>
+            <p>{{message.toUpperCase()}}</p>
+            <p>{{spanHtml}}</p>
+            <p v-html="spanHtml"></p>
+            <a v-bind:href="url">动力傻逼</a>
+            <p>{{reverseMassage}}</p>
+            <button-counter tittle='wangruiNb'></button-counter><br>
+            <button-counter></button-counter><br>
+            <button-counter></button-counter>
+        </div>
+        
+     
+        <script src="vue.js"></script>
+        <script>
+            Vue.component('button-counter',{
+                data:function(){
+                    return{
+                        count: 0
+                    }
+                },
+                props:['tittle'],
+                template:'<div><h1>{{tittle}}</h1><button v-on:click="count++">You clicked me {{count}} times.</button></div>'
+            })
+            let vm= new Vue({
+                el: '#app' ,
+                data:{
+                    message:"hello vue",
+                    url: "http://www.sina.com.cn",
+                    spanHtml: "<span style='color:red'>html元素红色显示</span>"
+                },
+                computed:{
+                    reverseMassage:function(){
+                        return this.message.split('').reverse().join('');
+                    }
+                }
+            })
+
+        </script>
+    </body>
+</html>
