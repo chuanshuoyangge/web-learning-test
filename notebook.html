@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta lang="zh">
+        <title>记事本</title>
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="header">记事本</div>
+            <input type="text" v-model="todoitem" @keyup.enter="additem">
+            <p>{{todoitem}}</p>
+            <div class="worker">
+                <ul class="lt">
+                    <li v-for="(item,index) in todolist" @dblclick="rmitem(index)">{{item}}</li>
+                </ul>
+            </div>
+            <div>{{todolist.length}}</div>
+        </div>
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                todoitem:"inputhere",
+                todolist:["example1","example2"]
+            },
+            methods:{
+                additem:function(){
+                    this.todolist.push(this.todoitem);
+
+                },
+                rmitem:function(index){
+                    this.todolist.splice(index,1)
+                }
+            }
+        })
+    </script>
+</html>
