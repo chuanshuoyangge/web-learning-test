@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF8">
+        <title>v-for-key</title>
+    </head>
+    <body>
+        <div id="app">
+            <p>
+                bookid:<input type="text" v-model="bookid">
+                booktitle:<input type="text" v-model="title">
+                <button v-on:click="add()">add</button>
+                
+            </p>
+            <p v-for="item in books" v-bind:key="item.id">
+                <input type="checkbox">
+                <span>id:{{item.id}} , title:{{item.title}}</span>
+
+            </p>
+            <a v-bind:href="url"> learn vbind</a>
+        </div>
+    </body>
+    <script src="vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                bookid:"",
+                title:"",
+                books:[
+                    {id:1,title:'vue 无难事'},
+                    {id:2,title:'VC++深入详解'},
+                    {id:3,title:'电工详解'}
+                ],
+                url:"www.baidu.com"
+            },
+            methods:{
+                add(){
+                    this.books.unshift({
+                        id:this.bookid,
+                        title:this.title,
+                        }
+                    );
+                    console.log(this.bookid)
+                }
+            }
+        })
+    </script>
+</html>
