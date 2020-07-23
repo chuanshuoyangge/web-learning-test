@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta lang="zh">
+        <title>countButton</title>
+        <!-- 生产环境版本，优化了尺寸和速度 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <style type="text/css">
+        #cnt{
+            width: 100px;
+            height: 100px;
+            margin: auto ;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);        
+        }
+    </style>
+    <body>
+        <div id="cnt">
+            <button v-on:click="btnplus">加1</button><span>{{a}}</span><button v-on:click="btnminus">减1</button>
+        </div>
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#cnt",
+            data:{
+                a:Number(1)
+            },
+            methods:{
+                btnplus:function(){
+                       if(this.a<10){
+                            this.a+=1
+                        }
+                        else{ alert("不能再加了");};
+
+                },
+                btnminus:function() {
+                   this.a-=1;
+                }
+            }
+        })    
+    </script>
+</html>
