@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta lang="ch">
+        <title>学习Vue计算属性</title>
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!--lodash CDN 版本-->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="question">
+            <p>{{answer}}</p>
+        </div>
+    </body>
+    <script>
+        var ap=new Vue({
+            el:"#app",
+            data:{
+                question:"please input your question",
+                answer:"waiting for question"
+            },
+            // created:function(){
+            //     this.debouncedGetAnswer=_.debounce(this.getAnswer,500)
+            // },
+            watch:{
+                question:function(){
+                    this.answer="typing";
+                    // this.debouncedGetAnswer();
+                    (_.debounce(this.getAnswer,500))();
+                }
+            },
+            methods:{
+                getAnswer:function(){
+                    this.answer="your answer is "+this.question;
+                }
+            }
+        })
+    </script>
+</html>
