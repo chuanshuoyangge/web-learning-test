@@ -48,6 +48,15 @@ Radio checkbox select三个类型结合`v-bind:model`使用
 
 数组的 .filter .map .reduce属性
 
+#### Vue组件开发：
+
+学习了vue组件的使用过程：1、创建构造函数 `const a= vue.extend({template:...})`2.注册组件（全局/局部）: vue.component("组件注册名",a) ,或者使用Vue对象内部component属性；
+
+学习了组件 语法糖
+
+组件的分离编写：`<template>标签`
+
 ### html5学习了
 
 label for 标签 绑定内部 `radio or checkbox or select `id选择器使用
+
