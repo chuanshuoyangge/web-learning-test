@@ -1,12 +1,46 @@
 # web-learning-test
 
-学习：第一次push到git
+## 2020年7月26日：
 
-学习：第一次pull到本地
+周六，陪媳妇
 
-## 2020年7月23日：
+### JavaScript学习了：
 
-学习vue  computed属性
+用自己的方法实现call函数：
+
+```javascript
+Function.prototype.newCall=function(obj){
+    obj.newFuc=this;
+    obj.newFuc(处理后的arguments数组)//可以用eval函数用字符串执行的方式，实现arguments函数的传递执行
+    delete obj.newFuc;
+}
+```
+
+###### call函数：实现调用函数绑定到传入参数对象的this，并执行调用函数(使用传入对象的Execution context执行调用函数)
+
+## 2020年7月25日：
+
+### Javascript学习了：
+
+`Vue v-bind:model="value"`
+
+Radio checkbox select三个类型结合`v-bind:model`使用
+
+#### Javascript高阶函数：
+
+数组的 .filter .map .reduce属性
+
+#### Vue组件开发：
+
+学习了vue组件的使用过程：1、创建构造函数 `const a= vue.extend({template:...})`2.注册组件（全局/局部）: vue.component("组件注册名",a) ,或者使用Vue对象内部component属性；
+
+学习了组件 语法糖
+
+组件的分离编写：`<template>标签`
+
+### html5学习了
+
+label for 标签 绑定内部 `radio or checkbox or select `id选择器使用
 
 ## 2020年7月24日：
 
@@ -36,27 +70,15 @@ th=table head cell
 
 td=table data cell
 
-## 2020年7月25日：
+## 2020年7月23日：
 
-### Javascript学习了：
+学习vue  computed属性
 
-`Vue v-bind:model="value"`
+### 2020年早些时候：
 
-Radio checkbox select三个类型结合`v-bind:model`使用
+学习：第一次push到git
 
-#### Javascript高阶函数：
+学习：第一次pull到本地
 
-数组的 .filter .map .reduce属性
 
-#### Vue组件开发：
-
-学习了vue组件的使用过程：1、创建构造函数 `const a= vue.extend({template:...})`2.注册组件（全局/局部）: vue.component("组件注册名",a) ,或者使用Vue对象内部component属性；
-
-学习了组件 语法糖
-
-组件的分离编写：`<template>标签`
-
-### html5学习了
-
-label for 标签 绑定内部 `radio or checkbox or select `id选择器使用
 
