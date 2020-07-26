@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+    <title>我的自定义Call、apply、bind函数</title>
+</head>
+<body>
+
+</body>
+<script>
+    Function.prototype.newcall=function(obj){
+        let obj=obj||window;
+        // let arr=arguments.slice(1);
+        let arr="";
+        obj.newFunc=this;
+        for(let i=1;i<arguments.length;i++){
+            arr=arr+'arguments['+i+'],'
+        };
+        console.log(arr);
+        eval("obj.newFunc("+arr+")");
+        delete obg.newFunc;
+
+    }
+    let hd={
+        name:"lianghedong"
+    }
+    let person=function(a,b,c,d){
+        console.log(this.name);
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
+    person.call(hd,"asd","adw","daw");
+    console.log(hd.name);
+    person.newcall(hd,"dwq","wdq","wadw");
+</script>
