@@ -1,8 +1,39 @@
+
+
 # web-learning-test
+
+## 2020年7月28日：
+
+### Vue学习了：
+
+###### v-on(语法糖@)指令,绑定事件时，不带圆括号，event将被自动当作实参传入
+
+```javascript
+v-on:click="myOwnClick"//使用不带圆括号的形式，event 对象将被自动当做实参传入；
+methods:
+myOwnClick(){
+    event.target.input...
+}
+```
+
+###### 使用带圆括号时，需要使用$event变量显式传入event对象
+
+```
+v-on:click="myOwnClick($event)"
+//使用带圆括号的形式，我们需要使用 $event 变量显式传入 event 对象。
+methods:
+myOwnClick(){
+    event.target.input...
+}
+```
+
+子组件在生成事件时，使用：
+
+`this.$emit("enventName",prop1....)`
 
 ## 2020年7月26日：
 
-周六，陪媳妇
+周日，陪媳妇
 
 ### JavaScript学习了：
 
