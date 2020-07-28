@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta lang="ch">
+    <title>学习Vue组件（1）</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mycpt></mycpt>
+        <mycpt></mycpt>
+        <mycpt></mycpt>
+        <mycpt></mycpt>
+    </div>
+</body>
+<script>
+    const cptA=Vue.extend({
+        template:`
+        <div>
+            <h2>我是一个组件</h2>
+            <p>我是组件的一个自然段</p>
+            <p>哈哈哈哈哈哈</p>
+        </div>`
+    })
+    Vue.component('mycpt',cptA)
+    const app=new Vue({
+        el:"#app"
+    })
+</script>
