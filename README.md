@@ -2,6 +2,44 @@
 
 # web-learning-test
 
+## 2020年7月30日：
+
+复习了Vue父子组件的通讯，父->子`props`，子->父`this.$emit("事件名",props...)`。组件data双向绑定时可以使用诸如input事件，触发自定义事件绑定；也可以使用watch方法触发事件绑定。
+
+### Vue学习了：
+
+###### 1.父组件访问子组件的两个方法，children和refs方法
+
+```javascript
+this.$children[0].props;
+this.$refs.pros;
+```
+
+###### 2.子组件访问父组件及根组件的方法(不常用)
+
+```javascript
+this.$parent.props;
+this.$root.props;
+```
+
+###### 3.slot插槽的使用
+
+```html
+<slot> </slot>
+<slot name="slot's name"></slot> //具名插槽
+//具名插槽的使用：
+<template v-slot:slotsName="自定义插槽引用名s">{{s.props}} </template>
+//具名插槽的定义及子组件数据绑定
+<slot name="abc" v-bind:props="自定义属性名"></slot>
+//插槽使用时的语法糖
+<template #slotsName="自定义插槽名"></template>
+
+```
+
+###### 4.编译作用域：
+
+父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。->父级模板的插槽直接引用会引用到父级作用域中的porps
+
 ## 2020年7月28日：
 
 ### Vue学习了：
