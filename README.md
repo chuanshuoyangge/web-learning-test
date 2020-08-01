@@ -2,6 +2,43 @@
 
 # web-learning-test
 
+## 2020年8月1日：
+
+webpack的本地安装 `cnpm install webpack --save-dev`
+
+配置package.json及webpack.config.js
+
+webpack.config.js:
+
+`entry output path filname`
+
+node模块path `path.resolve(_dirname,bundle.js)`
+
+###### webpack的使用
+
+commonjs模块导入导出语法：
+
+```javascript
+module.exports={
+    props,
+    functions....
+}
+const (props,functions) = require ('./abs.js')
+```
+
+ES6模块导入导出语法
+
+```javascript
+export{
+	a,b,c
+};
+export default d;
+import {a,b,c} from './a.js'
+import d from 'd.js'
+```
+
+
+
 ## 2020年7月30日：
 
 复习了Vue父子组件的通讯，父->子`props`，子->父`this.$emit("事件名",props...)`。组件data双向绑定时可以使用诸如input事件，触发自定义事件绑定；也可以使用watch方法触发事件绑定。

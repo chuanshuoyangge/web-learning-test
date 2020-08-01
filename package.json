@@ -1,5 +1,24 @@
 {
   "devDependencies": {
-    "webpack": "^4.43.0"
-  }
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "name": "learnhtml",
+  "description": "commonjs模块导入导出语法：",
+  "version": "1.0.0",
+  "main": "learnpromisTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuanshuoyangge/web-learning-test.git"
+  },
+  "author": "yxl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuanshuoyangge/web-learning-test/issues"
+  },
+  "homepage": "https://github.com/chuanshuoyangge/web-learning-test#readme"
 }
