@@ -13,9 +13,7 @@ export default {
   name: 'App',
   methods:{
     linkToHome(){
-      this.$router.push('/home').catch((e)=>{
-        console.log('输出报错',e)
-      })
+      this.$router.push('/home')
     }
   }
 }

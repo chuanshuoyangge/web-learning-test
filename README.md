@@ -2,6 +2,59 @@
 
 # web-learning-test
 
+## 2020年8月5日：
+
+### Vue学习了：
+
+###### Vue-cli的使用
+
+`vue create 项目名称`
+
+###### vue-router的使用
+
+1.安装vue-router `npm install vue-router`
+
+在项目目录src目录先新建router文件夹，新建index.js文件，在文件中写入：
+
+2.引入vue-router `import Router from 'vue-router'`
+
+3.注册vue-router `Vue.use('Router')`
+
+4.设置路由规则：
+
+```js
+const routes=[{path:'/home'，component:Home}]
+```
+
+5.新建并导出路由对象
+
+```js
+const router=new Router({routes,mode:'history'})
+export default router
+```
+
+6.在main.js文件中使用
+
+```js
+import Router from '../router/index'
+
+new Vue({router},render:h=>h(App)),$mount('app')
+```
+
+###### 使用vue-router:
+
+```js
+<router-link to="/home"><router-link>
+```
+
+或者绑定click事件:
+
+```js
+linkToHome(){this.$router.push('/home')}
+```
+
+
+
 ## 2020年8月1日：
 
 webpack的本地安装 `cnpm install webpack --save-dev`
@@ -61,13 +114,15 @@ this.$root.props;
 
 ###### 3.slot插槽的使用
 
+在同一组件中使用多个插槽时要使用template标签，并指定插槽名称
+
 ```html
 <slot> </slot>
 <slot name="slot's name"></slot> //具名插槽
 //具名插槽的使用：
 <template v-slot:slotsName="自定义插槽引用名s">{{s.props}} </template>
 //具名插槽的定义及子组件数据绑定
-<slot name="abc" v-bind:props="自定义属性名"></slot>
+<slot name="abc" v-bind:props="自定义属性名"></slot>//绑定子组件属性到插槽上
 //插槽使用时的语法糖
 <template #slotsName="自定义插槽名"></template>
 
