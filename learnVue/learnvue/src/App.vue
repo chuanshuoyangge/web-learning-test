@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-link to="/about">关于</router-link>
-    <router-link to="/home">首页</router-link>
+    <router-link v-bind:to="'/home'+person">首页</router-link>
     <div @click="linkToHome">div首页</div>
     <router-view></router-view>
   </div>
@@ -14,6 +14,11 @@ export default {
   methods:{
     linkToHome(){
       this.$router.push('/home')
+    }
+  },
+  data:function(){
+    return{
+      person:'lianghedong'
     }
   }
 }
