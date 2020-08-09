@@ -1,10 +1,10 @@
 <template>
-  <h1>this is profile page</h1>
+  <h1>this is an category page</h1>
 </template>
 
 <script>
 export default {
-    name:"Profile"
+  name:"About"
 }
 </script>
 
